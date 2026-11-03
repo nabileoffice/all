@@ -1,10 +1,20 @@
 CACHE MANIFEST 
 
 CACHE:
+cacheslopkit.html
 includes/style.css
 includes/NABEELLOGO.svg
 goldhen_2.4b18.12.bin
 index.html
+afterglow/jb.js
+afterglow/core.js
+afterglow/mem.js
+afterglow/int64.js
+afterglow/ps4_offsets.js
+afterglow/afterglow.js
+afterglow/goldhen.bin
+afterglow/patchset-1352.bin
+afterglow/patchset-1400.bin
 slopkit\chain_lapse.js
 slopkit\chain_poops.js
 slopkit\core.js?v=10
