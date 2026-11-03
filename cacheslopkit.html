@@ -1,47 +1,22 @@
 <!DOCTYPE html>
-<html lang="en" manifest="slopkit.appcache">
+<html lang="en" manifest="slopkit.manifest">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>PS4 [5.05] 7.00 - 14.00 FW GoldHEN Host</title>
+<title>PS4 [5.05] 7.00 - 13.52 FW GoldHEN Host</title>
 <link rel="stylesheet" href="includes/style.css">
 </head>
 <body>
 <script>
-function DLProgress(e) {
-    var percent = (e.total ? Math.round(e.loaded / e.total * 100) : 0);
-    window.msgs.innerHTML = "Installing Offline Cache: " + percent + "%";
-}
-function DisplayCacheProgress() {
-    window.msgs.innerHTML = "Cache Installed Successfully ✔";
-    setTimeout(function () {
-        window.msgs.innerHTML = "Now Close And Re-Open Your Browser ...";
-    }, 1500);
-}
+history.replaceState(null,null,'index.html');var histlength=history.length;history.go(-histlength);
+function DLProgress(e){Percent=(Math.round(e.loaded / e.total * 100));window.msgs.innerHTML="Installing Offline Cache: " + Percent + "%";}
+function DisplayCacheProgress(){window.msgs.innerHTML="Cache Installed Successfully ✔";setTimeout(function(){window.msgs.innerHTML="Now Close And Re-Open Your Browser ...";},1500);}
 window.applicationCache.addEventListener("progress",DLProgress,false);
-window.applicationCache.onchecking = function () {
-    window.msgs.innerHTML = "Checking Offline Cache...";
-};
-window.applicationCache.ondownloading = function () {
-    window.msgs.innerHTML = "Installing Offline Cache: 0%";
-};
-window.applicationCache.oncached = function () { DisplayCacheProgress(); };
-window.applicationCache.onupdateready = function () {
-    if (window.applicationCache.swapCache) {
-        window.applicationCache.swapCache();
-    }
-    DisplayCacheProgress();
-};
-window.applicationCache.onnoupdate = function () {
-    if (window.applicationCache.status == 1) {
-        window.msgs.innerHTML = "Offline Cache is Ready - Close And Re-Open Your Browser";
-    }
-};
-window.applicationCache.onerror = function () {
-    window.msgs.innerHTML = "Error Installing Cache! - Clear and Re-Open Your Browser ...";
-};
+window.applicationCache.oncached=function(e){DisplayCacheProgress();};
+window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
+window.applicationCache.onerror=function(e){window.msgs.innerHTML="Error Installing Cache! - Clear and Re-Open Your Browser ...";};
 </script>
 <header class="site-header"><div class="header-content"><img src="includes/NABEELLOGO.svg" alt="Nabil's Logo" class="header-logo"><div class="header-titles"><h1>PS4 Jailbreak</h1></div></div></header>
-<main class="page-shell"><p class="eyebrow"></p><h3>Firmware 11.50 to 14.00</h3><section class="status-panel" aria-live="polite"><p class="status-label">Cache installation</p><div id="msgs">Starting Cache Installation...</div></section></main>
+<main class="page-shell"><p class="eyebrow"></p><h3>Firmware 11.50 to 13.52</h3><section class="status-panel" aria-live="polite"><p class="status-label">Cache installation</p><div id="msgs">Starting Cache Installation...</div></section></main>
 </body>
 </html>
