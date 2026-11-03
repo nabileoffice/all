@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" manifest="slopkit.manifest">
+<html lang="en" manifest="slopkit.appcache">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -19,12 +19,23 @@ function DisplayCacheProgress() {
     }, 1500);
 }
 window.applicationCache.addEventListener("progress",DLProgress,false);
+window.applicationCache.onchecking = function () {
+    window.msgs.innerHTML = "Checking Offline Cache...";
+};
+window.applicationCache.ondownloading = function () {
+    window.msgs.innerHTML = "Installing Offline Cache: 0%";
+};
 window.applicationCache.oncached = function () { DisplayCacheProgress(); };
 window.applicationCache.onupdateready = function () {
     if (window.applicationCache.swapCache) {
         window.applicationCache.swapCache();
     }
     DisplayCacheProgress();
+};
+window.applicationCache.onnoupdate = function () {
+    if (window.applicationCache.status == 1) {
+        window.msgs.innerHTML = "Offline Cache is Ready - Close And Re-Open Your Browser";
+    }
 };
 window.applicationCache.onerror = function () {
     window.msgs.innerHTML = "Error Installing Cache! - Clear and Re-Open Your Browser ...";

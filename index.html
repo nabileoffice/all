@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" manifest="slopkit.manifest">
+<html lang="en" manifest="slopkit.appcache">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -23,7 +23,11 @@ if (!isPS4) {
         msgs.innerHTML = "Only for PS4 with Firmware 5.05 and 7.00 to 14.00";
     });
 } else {
-    if (window.applicationCache.status == '0') {
+    var cacheStatus = window.applicationCache ? window.applicationCache.status : 0;
+    var cacheNeedsInstallation =
+        cacheStatus == 0 || cacheStatus == 2 || cacheStatus == 3 || cacheStatus == 4 || cacheStatus == 5;
+
+    if (cacheNeedsInstallation) {
         if (fwNum == 5.05 || fwNum == 5.07) {
             window.location.replace("cache505.html");
         } else if (fwNum >= 7.00 && fwNum <= 8.52) {
