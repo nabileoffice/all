@@ -1,9 +1,9 @@
 CACHE MANIFEST 
 
 CACHE: 
-includes/style.css
-includes/NABEELLOGO.svg
-goldhen_2.4b18.12.bin
+../img.jpg
+../style.css
+goldhen_2.4b18.13.bin
 index.html
 900\alert.js
 900\config.js
