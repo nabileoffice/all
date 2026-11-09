@@ -1,18 +1,16 @@
 CACHE MANIFEST 
 
 CACHE:
-../img.jpg
-../style.css
+includes/style.css
+includes/NABEELLOGO.svg
 goldhen_2.4b18.13.bin
 index.html
-slopkit\afterglow.js
 slopkit\chain_lapse.js
 slopkit\chain_poops.js
 slopkit\core.js?v=10
 slopkit\core.js
 slopkit\int64.js
-slopkit\jb.js?v=19
-slopkit\jb2.js
+slopkit\jb.js?v=10
 slopkit\mem.js
 slopkit\ps4_offsets.js
 slopkit\rpc_worker.js
@@ -24,6 +22,5 @@ slopkit\patches\1302.bin
 slopkit\patches\1350.bin
 slopkit\patches\1352.bin
 slopkit\patches\1400.bin
-
 NETWORK:
 *
